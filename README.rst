@@ -2,9 +2,6 @@
 djangocms-gmaps
 =============================
 
-.. image:: http://img.shields.io/travis/mishbahr/djangocms-gmaps.svg?style=flat-square
-    :target: https://travis-ci.org/mishbahr/djangocms-gmaps/
-
 .. image:: http://img.shields.io/pypi/v/djangocms-gmaps.svg?style=flat-square
     :target: https://pypi.python.org/pypi/djangocms-gmaps/
     :alt: Latest Version
@@ -17,10 +14,8 @@ djangocms-gmaps
     :target: https://pypi.python.org/pypi/djangocms-gmaps/
     :alt: License
 
-.. image:: http://img.shields.io/coveralls/mishbahr/djangocms-gmaps.svg?style=flat-square
-  :target: https://coveralls.io/r/mishbahr/djangocms-gmaps?branch=master
+The easiest way to embed Google Maps for your django-cms powered site. This is a great way to display the location of your business or event. 
 
-Your project description goes here
 
 Quickstart
 ----------
@@ -37,12 +32,9 @@ Quickstart
         ...
     )
 
-Features
---------
 
-* TODO
 
-Documentation
+Configuration
 -------------
 
-The full documentation is at https://djangocms-gmaps.readthedocs.org.
+* TODO
