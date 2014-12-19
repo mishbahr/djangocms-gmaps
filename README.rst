@@ -20,7 +20,7 @@ djangocms-gmaps
     
     
 
-The easiest way to embed Google Maps for your django-cms powered site. This is a great way to display the location of your business or event. 
+The easiest way to embed Google Maps for your django-cms powered site. This is a great way to display the location of your business or event. This project requires django-cms v3.0 or higher to be properly installed and configured. 
 
 
 Quickstart
