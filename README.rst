@@ -87,3 +87,25 @@ Set fieldsets to control the layout of ``Location`` plugin add/change form::
 
     DJANGOCMS_GMAPS_LOCATION_FIELDSETS = None
 
+Enable ``Advanced Options`` to allow the users to fully customise map controls e.g. ``streetViewControl``::
+
+    DJANGOCMS_GMAPS_ADVANCED_OPTIONS_ENABLED = True
+
+Styled maps allow the user to customize the presentation of the Google maps, changing the visual display of such elements as roads, parks, and built-up areas::
+
+   DJANGOCMS_GMAPS_STYLED_MAPS_ENABLED = True
+
+Info windows - set this to false if you want to disable the infowindow::
+
+    DJANGOCMS_GMAPS_INFOWINDOW_ENABLED = True
+
+
+Info window with maxWidth - the maximum width of  a info window is set to 220 pixels::
+
+    DJANGOCMS_GMAPS_INFOWINDOW_MAXWIDTH = 220
+
+Allow users to define custom marker icons for individual locations instead of the default icons:: 
+
+    DJANGOCMS_GMAPS_CUSTOM_MARKERS_ENABLED = True 
+
+
