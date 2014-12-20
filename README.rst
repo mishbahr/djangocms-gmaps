@@ -26,11 +26,11 @@ The easiest way to embed Google Maps for your ``django-cms`` powered site - incl
 Quickstart
 ----------
 
-1. Install `djangocms-gmaps`::
+1. Install ``djangocms-gmaps``::
 
     pip install djangocms-gmaps
 
-2. Add `djangocms_gmaps` to `INSTALLED_APPS`::
+2. Add ``djangocms_gmaps`` to ``INSTALLED_APPS``::
 
     INSTALLED_APPS = (
         ...
