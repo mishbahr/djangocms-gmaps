@@ -20,7 +20,7 @@ djangocms-gmaps
     
     
 
-The easiest way to embed Google Maps for your ``django-cms`` powered site - includes a custom ``CoordinatesWidget``with draggable marker to fine tune map positions. This project requires django-cms v3.0 or higher to be properly installed and configured. 
+The easiest way to embed Google Maps for your ``django-cms`` powered site - includes a custom ``CoordinatesWidget` with draggable marker to fine tune map positions. This project requires django-cms v3.0 or higher to be properly installed and configured. 
 
 
 Quickstart
