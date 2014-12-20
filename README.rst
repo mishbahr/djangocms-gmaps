@@ -43,4 +43,47 @@ Quickstart
 Configuration
 -------------
 
-* TODO
+Plugin(s) Module — If module is None, plugin is grouped ``Generic`` group::
+
+     DJANGOCMS_GMAPS_PLUGIN_MODULE = _('Generic')
+
+Name of the ``Map`` plugin::
+
+    DJANGOCMS_GMAPS_PLUGIN_NAME = _('Map')
+
+Name of the ``Location`` plugin::
+
+    DJANGOCMS_GMAPS_LOCATION_PLUGIN_NAME = _('Location')
+
+Can this plugin only be attached to a placeholder that is attached to a page::
+    
+   DJANGOCMS_GMAPS_PAGE_ONLY = False
+
+A list of Plugin Class Names. If this is set, this plugin may only be added to plugins listed here::
+
+    DJANGOCMS_GMAPS_PARENT_CLASSES = None
+
+Is it required that this plugin is a child of another plugin? Or can it be added to any placeholder::
+
+    DJANGOCMS_GMAPS_REQUIRE_PARENT = False
+
+Whether this plugin can be used in text plugins or not::
+
+    DJANGOCMS_GMAPS_TEXT_ENABLED = False
+
+The path to the template used to render the template::
+
+    DJANGOCMS_GMAPS_TEMPLATE = 'djangocms_gmaps/default.html'
+
+You can customize the content and appearance of ``InfoWindow`` attached to map markers::
+
+    DJANGOCMS_GMAPS_INFOWINDOW_TEMPLATE = 'djangocms_map/infowindow.html'
+
+Set fieldsets to control the layout of ``Map`` plugin add/change form::
+
+    DJANGOCMS_GMAPS_FIELDSETS = None
+
+Set fieldsets to control the layout of ``Location`` plugin add/change form::
+
+    DJANGOCMS_GMAPS_LOCATION_FIELDSETS = None
+
