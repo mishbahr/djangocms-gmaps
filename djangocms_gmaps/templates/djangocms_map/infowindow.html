@@ -1,0 +1,13 @@
+{% load thumbnail %}
+<div class="infowindow">
+	<div class="content">
+        {{ location.infowindow|safe }}
+	</div>
+	{% if location.photo %}
+		{% thumbnail location.photo 220x0 upscale as thumb %}
+		<div class="location-photo">
+			<img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" />
+		</div>
+	{% endif %}
+	<a href="{{ location.get_direction_url }}" target="_blank">Get Direction</a>
+</div>
