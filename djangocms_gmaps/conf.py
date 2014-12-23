@@ -6,15 +6,15 @@ from django.conf import settings  # noqa
 from django.utils.translation import ugettext_lazy as _
 
 
-class DjangoCMSMapConf(AppConf):
+class DjangoCMSGmapsConf(AppConf):
     PLUGIN_MODULE = _('Generic')
     PLUGIN_NAME = _('Map')
     LOCATION_PLUGIN_NAME = _('Location')
     PAGE_ONLY = False
     PARENT_CLASSES = None
     REQUIRE_PARENT = False
-    TEMPLATE = 'djangocms_map/default.html'
-    INFOWINDOW_TEMPLATE = 'djangocms_map/infowindow.html'
+    TEMPLATE = 'djangocms_gmaps/default.html'
+    INFOWINDOW_TEMPLATE = 'djangocms_gmaps/infowindow.html'
     TEXT_ENABLED = False
 
     FIELDSETS = None
@@ -25,8 +25,8 @@ class DjangoCMSMapConf(AppConf):
 
     INFOWINDOW_ENABLED = True
     INFOWINDOW_MAXWIDTH = 220
-    CUSTOM_MARKERS_ENABLED = True
 
+    CUSTOM_MARKERS_ENABLED = True
     CUSTOM_MARKERS_WIDTH = 32
     CUSTOM_MARKERS_HEIGHT = 32
 
