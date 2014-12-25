@@ -137,7 +137,7 @@ var GMaps = function(options) {
 };
 
 google.maps.event.addDomListener(window, 'load', function() {
-  var maps = document.getElementsByClassName('djangocms-map');
+  var maps = document.getElementsByClassName('djangocms_gmaps');
   for (var i = 0; i < maps.length; i++) {
     var mapOptions = {
       div: maps[i]

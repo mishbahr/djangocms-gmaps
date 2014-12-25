@@ -16,10 +16,10 @@ try:
         'DATABASES': {
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': 'djangocms_map',
+                'NAME': 'djangocms_gmaps',
             }
         },
-        'ROOT_URLCONF': 'djangocms_map.urls',
+        'ROOT_URLCONF': 'djangocms_gmaps.urls',
         'INSTALLED_APPS': [
             'django.contrib.auth',
             'django.contrib.contenttypes',

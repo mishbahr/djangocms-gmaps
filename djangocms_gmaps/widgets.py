@@ -19,13 +19,13 @@ class CoordinatesWidget(forms.TextInput):
         context = {
             'rendered_widgets': rendered_widgets
         }
-        return render_to_string('djangocms_map/forms/coordinates_widget.html', context)
+        return render_to_string('djangocms_gmaps/forms/coordinates_widget.html', context)
 
     class Media:
         css = {
-            'all': ('css/djangocms_map/coordinates_widget.css', )
+            'all': ('css/djangocms_gmaps/coordinates_widget.css', )
         }
         js = (
             '//maps.google.com/maps/api/js?sensor=false',
-            'js/djangocms_map/coordinates_widget.js',
+            'js/djangocms_gmaps/coordinates_widget.js',
         )

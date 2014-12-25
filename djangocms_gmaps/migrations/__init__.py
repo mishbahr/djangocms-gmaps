@@ -1,15 +1,13 @@
 """
 Django migrations for djangocms_map app
-
 This package does not contain South migrations.  South migrations can be found
 in the ``south_migrations`` package.
 """
 
 SOUTH_ERROR_MESSAGE = """\n
 For South support, customize the SOUTH_MIGRATION_MODULES setting like so:
-
     SOUTH_MIGRATION_MODULES = {
-        'djangocms_map': 'djangocms_map.south_migrations',
+        'djangocms_gmaps': 'djangocms_gmaps.south_migrations',
     }
 """
 

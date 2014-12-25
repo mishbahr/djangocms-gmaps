@@ -1,7 +1,7 @@
 {% load staticfiles sekizai_tags cms_tags %}
 
 {% addtoblock "js" %}<script type="text/javascript" src="//maps-api-ssl.google.com/maps/api/js?v=3&amp;sensor=true"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{% static "js/djangocms_map/gmaps.js" %}"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{% static "js/djangocms_gmaps/gmaps.js" %}"></script>{% endaddtoblock %}
 
 
 {# needed for rendering plugins for frontend editing #}
@@ -14,7 +14,7 @@
 	{% if instance.title %}
         <h2>{{ instance.title }}</h2>
     {% endif %}
-	<div class="djangocms-map" data-options='{{ map_options }}'></div>
+	<div class="djangocms_gmaps" data-options='{{ map_options }}'></div>
 </div>
 
 

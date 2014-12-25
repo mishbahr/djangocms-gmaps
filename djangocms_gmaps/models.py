@@ -33,8 +33,8 @@ class Map(CMSPlugin):
         help_text=_('The initial Map zoom level.'))
     map_type = models.CharField(
         _('Map Types'), max_length=50,
-        choices=settings.DJANGOCMS_MAP_MAP_TYPES,
-        default=settings.DJANGOCMS_MAP_MAP_TYPES_DEFAULT)
+        choices=settings.DJANGOCMS_GMAPS_MAP_TYPES,
+        default=settings.DJANGOCMS_GMAPS_MAP_TYPES_DEFAULT)
     info_window = models.BooleanField(
         _('Info window'), default=True,
         help_text=_('Show textbox over marker?'))
@@ -95,7 +95,7 @@ class Location(CMSPlugin):
         _('Region'), max_length=100, blank=True)
     postal_code = models.CharField(_('Postcode'), max_length=30, blank=True)
     country_short = models.CharField(
-        _('Country'), max_length=255, blank=True, choices=settings.DJANGOCMS_MAP_COUNTRIES)
+        _('Country'), max_length=255, blank=True, choices=settings.DJANGOCMS_GMAPS_COUNTRIES)
     formatted_address = models.CharField(
         _('Formatted Address'), max_length=255, blank=True,
         help_text=_('Human-readable address of this location.'))
@@ -130,27 +130,27 @@ class Location(CMSPlugin):
         return ', '.join(self.address_components)
 
     def get_marker_icon(self):
-        if not self.marker_icon or not settings.DJANGOCMS_MAP_CUSTOM_MARKERS_ENABLED:
+        if not self.marker_icon or not settings.DJANGOCMS_GMAPS_CUSTOM_MARKERS_ENABLED:
             return ''
 
         thumbnailer = get_thumbnailer(self.marker_icon)
         thumb = thumbnailer.get_thumbnail({
             'size': (
-                settings.DJANGOCMS_MAP_CUSTOM_MARKERS_WIDTH,
-                settings.DJANGOCMS_MAP_CUSTOM_MARKERS_HEIGHT
+                settings.DJANGOCMS_GMAPS_CUSTOM_MARKERS_WIDTH,
+                settings.DJANGOCMS_GMAPS_CUSTOM_MARKERS_HEIGHT
             )
         })
         return thumb.url
 
     def get_infowindow(self):
-        if not self.infowindow or not settings.DJANGOCMS_MAP_INFOWINDOW_ENABLED:
+        if not self.infowindow or not settings.DJANGOCMS_GMAPS_INFOWINDOW_ENABLED:
             return ''
 
         rendered_infowindow = render_to_string(
-            'djangocms_map/infowindow.html', {'location': self, })
+            settings.DJANGOCMS_GMAPS_INFOWINDOW_TEMPLATE, {'location': self, })
         return {
             'content': strip_spaces_between_tags(rendered_infowindow.strip()),
-            'maxWidth': settings.DJANGOCMS_MAP_INFOWINDOW_MAXWIDTH
+            'maxWidth': settings.DJANGOCMS_GMAPS_INFOWINDOW_MAXWIDTH
         }
 
 

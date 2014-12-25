@@ -27,14 +27,14 @@ class LocationForm(forms.ModelForm):
 class LocationPlugin(CMSPluginBase):
     model = Location
     form = LocationForm
-    module = settings.DJANGOCMS_MAP_PLUGIN_MODULE
-    name = settings.DJANGOCMS_MAP_LOCATION_PLUGIN_NAME
+    module = settings.DJANGOCMS_GMAPS_PLUGIN_MODULE
+    name = settings.DJANGOCMS_GMAPS_LOCATION_PLUGIN_NAME
     render_plugin = False
     parent_classes = ('MapPlugin', )
 
     def get_fieldsets(self, request, obj=None):
-        if settings.DJANGOCMS_MAP_LOCATION_FIELDSETS:
-            return settings.DJANGOCMS_MAP_LOCATION_FIELDSETS
+        if settings.DJANGOCMS_GMAPS_LOCATION_FIELDSETS:
+            return settings.DJANGOCMS_GMAPS_LOCATION_FIELDSETS
 
         fieldsets = (
             (None, {
@@ -45,7 +45,7 @@ class LocationPlugin(CMSPluginBase):
 
         )
 
-        if settings.DJANGOCMS_MAP_INFOWINDOW_ENABLED:
+        if settings.DJANGOCMS_GMAPS_INFOWINDOW_ENABLED:
             fieldsets = fieldsets + (
                 (_('Info Window'), {
                     'classes': ('collapse', ),
@@ -53,7 +53,7 @@ class LocationPlugin(CMSPluginBase):
                 }),
             )
 
-        if settings.DJANGOCMS_MAP_CUSTOM_MARKERS_ENABLED:
+        if settings.DJANGOCMS_GMAPS_CUSTOM_MARKERS_ENABLED:
             fieldsets = fieldsets + (
                 (_('Custom Markers'), {
                     'classes': ('collapse', ),
@@ -70,15 +70,15 @@ plugin_pool.register_plugin(LocationPlugin)
 
 class MapPlugin(CMSPluginBase):
     model = Map
-    module = settings.DJANGOCMS_MAP_PLUGIN_MODULE
-    name = settings.DJANGOCMS_MAP_PLUGIN_NAME
-    render_template = settings.DJANGOCMS_MAP_TEMPLATE
+    module = settings.DJANGOCMS_GMAPS_PLUGIN_MODULE
+    name = settings.DJANGOCMS_GMAPS_PLUGIN_NAME
+    render_template = settings.DJANGOCMS_GMAPS_TEMPLATE
     child_classes = ('LocationPlugin', )
     allow_children = True
 
     def get_fieldsets(self, request, obj=None):
-        if settings.DJANGOCMS_MAP_FIELDSETS:
-            return settings.DJANGOCMS_MAP_FIELDSETS
+        if settings.DJANGOCMS_GMAPS_FIELDSETS:
+            return settings.DJANGOCMS_GMAPS_FIELDSETS
 
         fieldsets = (
             (None, {
@@ -89,7 +89,7 @@ class MapPlugin(CMSPluginBase):
             }),
         )
 
-        if settings.DJANGOCMS_MAP_ADVANCED_OPTIONS_ENABLED:
+        if settings.DJANGOCMS_GMAPS_ADVANCED_OPTIONS_ENABLED:
             fieldsets = fieldsets + (
                 (_('Advanced Options'), {
                     'classes': ('collapse', ),
@@ -99,7 +99,7 @@ class MapPlugin(CMSPluginBase):
                 }),
             )
 
-        if settings.DJANGOCMS_MAP_STYLED_MAPS_ENABLED:
+        if settings.DJANGOCMS_GMAPS_STYLED_MAPS_ENABLED:
             fieldsets = fieldsets + (
                 (_('Style Options'), {
                     'classes': ('collapse', ),

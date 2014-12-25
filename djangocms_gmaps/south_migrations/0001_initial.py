@@ -9,7 +9,7 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'Map'
-        db.create_table(u'djangocms_map_map', (
+        db.create_table(u'djangocms_gmaps_map', (
             (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
             ('width', self.gf('django.db.models.fields.CharField')(default='100%', max_length=10)),
@@ -27,10 +27,10 @@ class Migration(SchemaMigration):
             ('map_type_control', self.gf('django.db.models.fields.BooleanField')(default=True)),
             ('styles', self.gf('jsonfield.fields.JSONField')(null=True, blank=True)),
         ))
-        db.send_create_signal(u'djangocms_map', ['Map'])
+        db.send_create_signal(u'djangocms_gmaps', ['Map'])
 
         # Adding model 'Location'
-        db.create_table(u'djangocms_map_location', (
+        db.create_table(u'djangocms_gmaps_location', (
             (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
             ('location_name', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
             ('street_address', self.gf('django.db.models.fields.CharField')(max_length=150, blank=True)),
@@ -44,15 +44,15 @@ class Migration(SchemaMigration):
             ('infowindow', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('marker_icon', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='djangocms_map_marker_icons', null=True, to=orm['filer.Image'])),
         ))
-        db.send_create_signal(u'djangocms_map', ['Location'])
+        db.send_create_signal(u'djangocms_gmaps', ['Location'])
 
 
     def backwards(self, orm):
         # Deleting model 'Map'
-        db.delete_table(u'djangocms_map_map')
+        db.delete_table(u'djangocms_gmaps_map')
 
         # Deleting model 'Location'
-        db.delete_table(u'djangocms_map_location')
+        db.delete_table(u'djangocms_gmaps_location')
 
 
     models = {
@@ -113,7 +113,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'djangocms_map.location': {
+        u'djangocms_gmaps.location': {
             'Meta': {'object_name': 'Location', '_ormbases': ['cms.CMSPlugin']},
             u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'coordinates': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
@@ -128,7 +128,7 @@ class Migration(SchemaMigration):
             'region': ('django.db.models.fields.CharField', [], {'max_length': '100', 'blank': 'True'}),
             'street_address': ('django.db.models.fields.CharField', [], {'max_length': '150', 'blank': 'True'})
         },
-        u'djangocms_map.map': {
+        u'djangocms_gmaps.map': {
             'Meta': {'object_name': 'Map', '_ormbases': ['cms.CMSPlugin']},
             u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'double_click_zoom': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
@@ -193,4 +193,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['djangocms_map']
+    complete_apps = ['djangocms_gmaps']
