@@ -38,6 +38,9 @@ Quickstart
         ...
     )
 
+3. Sync the models with database::
+
+    python manage.py migrate
 
 
 Configuration
