@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
-import urllib
+
+try:
+    from urllib.parse import quote_plus
+except ImportError:     # Python 2
+    from urllib import quote_plus
+
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.loader import render_to_string
@@ -169,7 +174,7 @@ class Location(CMSPlugin):
             'zoom': 17,
             'lat': coordinates[0],
             'lng': coordinates[1],
-            'address': urllib.quote_plus(self.address)
+            'address': quote_plus(self.address)
         }
         return u'http://maps.google.com/maps' \
                u'?f=d&z=%(zoom)s&ll=%(lat)s,%(lng)s' \
