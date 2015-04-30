@@ -2,14 +2,6 @@
 djangocms-gmaps
 =============================
 
-.. image:: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_001.png
-  :target: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_001.png
-  :width: 768px
-  :align: center
-
-The easiest way to embed Google Maps for your ``django-cms`` powered site - includes a custom ``CoordinatesWidget`` with draggable marker to fine tune map positions. This project requires django-cms v3.0 or higher to be properly installed and configured. 
-
-
 .. image:: http://img.shields.io/pypi/v/djangocms-gmaps.svg?style=flat-square
     :target: https://pypi.python.org/pypi/djangocms-gmaps/
     :alt: Latest Version
@@ -26,6 +18,27 @@ The easiest way to embed Google Maps for your ``django-cms`` powered site - incl
     :target: https://pypi.python.org/pypi/django-cms/
     :alt: django-cms
 
+.. image:: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_001.png
+  :target: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_001.png
+  :width: 768px
+  :align: center
+
+
+The easiest way to embed Google Maps for your ``django-cms`` powered site - includes a custom ``CoordinatesWidget`` with draggable marker to fine tune map positions. This project requires django-cms v3.0 or higher to be properly installed and configured. 
+
+
+Preview
+--------
+
+.. image:: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_002.png
+  :target: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_002.png
+  :width: 768px
+  :align: center
+  
+.. image:: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_003.png
+  :target: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_003.png
+  :width: 768px
+  :align: center
 
 Quickstart
 ----------
@@ -46,7 +59,7 @@ Quickstart
 
     python manage.py migrate
 
-
+  
 Configuration
 -------------
 
