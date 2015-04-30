@@ -53,7 +53,7 @@ Quickstart
         ...
     )
 
-3. Sync the models with database::
+3. Sync database tables (requires south>=1.0.1 if you are using Django 1.6.x)::
 
     python manage.py migrate
 
