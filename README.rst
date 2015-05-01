@@ -23,11 +23,6 @@ This project requires django-cms v3.0 or higher to be properly installed and con
 Preview
 --------
 
-.. image:: http://mishbahr.github.io/djangocms-gmaps/assets/resized/djangocms_gmaps_001.jpeg
-  :target: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_001.png
-  :width: 768px
-  :align: center
-
 .. image:: http://mishbahr.github.io/djangocms-gmaps/assets/resized/djangocms_gmaps_002.jpeg
   :target: http://mishbahr.github.io/djangocms-gmaps/assets/djangocms_gmaps_002.png
   :width: 768px
