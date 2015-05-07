@@ -6,6 +6,7 @@ Development Lead
 ----------------
 
 * Mishbah Razzaque <mishbahx@gmail.com>
+* Martin Koistinen <mkoistinen@gmail.com>
 
 Contributors
 ------------
