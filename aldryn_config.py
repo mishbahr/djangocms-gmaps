@@ -10,14 +10,18 @@ class Form(forms.BaseForm):
     plugin_name = forms.CharField("Plugin name", initial='Map')
     location_plugin_name = forms.CharField("Location plugin name",
         initial='Location')
-    page_only = forms.CheckboxField("Page placeholders only?", initial=False,
+    page_only = forms.CheckboxField("Page placeholders only?",
+        initial=False, required=False,
         help_text="Check this box to limit use of these plugins to CMSPage "
                     "placholders only.")
-    parent_classes = forms.CharField("Parent plugin classes", max_length=255)
-    require_parent = forms.CheckboxField("Child only?", initial=False,
+    parent_classes = forms.CharField("Parent plugin classes",
+        max_length=255, required=False,)
+    require_parent = forms.CheckboxField("Child only?",
+        initial=False, required=False,
         help_text="Chcck this box to only allow these plugins to be used "
                     "only as children of other plugins.")
-    text_enabled = forms.CheckboxField("Text enabled?", initial=False,
+    text_enabled = forms.CheckboxField("Text enabled?",
+        initial=False, required=False,
         help_text="Check this box to allow these plugins to be used as "
                     "children of TextPlugin instances.")
     template = forms.CharField("Render template",
@@ -29,18 +33,20 @@ class Form(forms.BaseForm):
     #                     sensible defaults already, so, not really required.
     # location_fieldsets: - ditto -
     advanced_options_enabled = forms.CheckboxField("Show advanced options",
-        initial=True,
+        initial=True, required=False,
         help_text="Enable Advanced Options to allow the users to fully "
                     "customise map controls e.g. streetViewControl")
     styled_maps_enabled = forms.CheckboxField("Enable styled maps?",
-        initial=True, help_text="Check this box to allow the user to "
-                                  "customize tha appearance of maps.")
+        initial=True, required=False,
+        help_text="Check this box to allow the user to customize tha "
+                  "appearance of maps.")
     infowindow_enabled = forms.CheckboxField("Enable InfoWindow?",
-        initial=True, help_text="Check this box to enable the InfoWindow")
+        initial=True, required=False,
+        help_text="Check this box to enable the InfoWindow")
     infowindow_maxwidth = forms.NumberField("Max width", initial=220,
         help_text="Set this to the desired maximum InfoWindow width.")
     custom_markers_enabled = forms.CheckboxField("Custom markers?",
-        initial=True,
+        initial=True, required=False,
         help_text="Check this box to allow the use of custom markers.")
 
     def to_settings(self, data, settings):
