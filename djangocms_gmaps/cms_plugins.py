@@ -3,7 +3,6 @@ try:
 except ImportError:
     from django.utils import simplejson as json
 
-from django import forms
 from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 
@@ -11,17 +10,8 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
 from .conf import settings
-from .widgets import CoordinatesWidget
+from .forms import LocationForm
 from .models import Map, Location
-
-
-class LocationForm(forms.ModelForm):
-
-    class Meta:
-        model = Location
-        widgets = {
-            'coordinates': CoordinatesWidget(),
-        }
 
 
 class LocationPlugin(CMSPluginBase):
