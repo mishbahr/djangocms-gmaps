@@ -122,3 +122,10 @@ Allow users to define custom marker icons for individual locations instead of th
     DJANGOCMS_GMAPS_CUSTOM_MARKERS_ENABLED = True 
 
 
+You may also like...
+--------------------
+
+* djangocms-forms — https://github.com/mishbahr/djangocms-forms
+* djangocms-instagram — https://github.com/mishbahr/djangocms-instagram
+* djangocms-responsive-wrapper — https://github.com/mishbahr/djangocms-responsive-wrapper
+* djangocms-twitter2 — https://github.com/mishbahr/djangocms-twitter2
