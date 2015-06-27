@@ -1,7 +1,11 @@
 #map-canvas {
     clear:both;
-    height: 280px;
-    width: 100%;
+    height: 250px;
+    width: 600px;
     margin: 10px 0;
     background-color: #E6E6E6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
