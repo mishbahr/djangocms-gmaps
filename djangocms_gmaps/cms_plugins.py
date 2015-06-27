@@ -102,16 +102,18 @@ class MapPlugin(CMSPluginBase):
     def get_locations(self, instance):
         locations = []
         child_plugins = getattr(instance, 'child_plugin_instances', None) or []
-        for location in child_plugins:
-            locations.append({
-                'title': location.location_name.strip(),
-                'address': location.address,
-                'coordinates': location.get_coordinates(),
-                'get_direction_url': location.get_direction_url,
-                'edit_plugin_url': location.edit_plugin_url,
-                'icon': location.get_marker_icon(),
-                'infoWindow': location.get_infowindow(),
-            })
+
+        for plugin in child_plugins:
+            if isinstance(plugin, Location):
+                locations.append({
+                    'title': plugin.location_name.strip(),
+                    'address': plugin.address,
+                    'coordinates': plugin.get_coordinates(),
+                    'get_direction_url': plugin.get_direction_url,
+                    'edit_plugin_url': plugin.edit_plugin_url,
+                    'icon': plugin.get_marker_icon(),
+                    'infoWindow': plugin.get_infowindow(),
+                })
         return locations
 
     def get_map_options(self, context, instance):
@@ -130,7 +132,6 @@ class MapPlugin(CMSPluginBase):
             'height': instance.height,
             'styles': instance.get_map_styles(),
             'locations': self.get_locations(instance),
-            'edit_mode': context['request'].toolbar.edit_mode
         }
         return options
 
