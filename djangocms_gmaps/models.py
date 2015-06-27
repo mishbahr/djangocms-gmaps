@@ -158,7 +158,6 @@ class Location(CMSPlugin):
             'maxWidth': settings.DJANGOCMS_GMAPS_INFOWINDOW_MAXWIDTH
         }
 
-
     def get_coordinates(self):
         coordinates = [pos.strip() for pos in self.coordinates.split(',')]
         return coordinates[0], coordinates[1]
