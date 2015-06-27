@@ -109,11 +109,11 @@ class Location(CMSPlugin):
         help_text=_('Drag map marker to fine tune the map position.'))
     photo = FilerImageField(
         verbose_name=_('Location Photo'), blank=True, null=True,
-        related_name='djangocms_map_locations')
+        on_delete=models.SET_NULL, related_name='djangocms_map_locations')
     infowindow = models.TextField(_('Content'), blank=True)
     marker_icon = FilerImageField(
         verbose_name=_('Marker Icon'), blank=True, null=True,
-        related_name='djangocms_map_marker_icons')
+        on_delete=models.SET_NULL, related_name='djangocms_map_marker_icons')
 
     @property
     def country(self):
