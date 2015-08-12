@@ -21,13 +21,12 @@ if sys.argv[-1] == 'publish':
     sys.exit()
 
 readme = open('README.rst').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='djangocms-gmaps',
     version=version,
     description="""The easiest way to embed Google Maps for your django-cms powered site. This is a great way to display the location of your business or event.""",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     author='Mishbah Razzaque',
     author_email='mishbahx@gmail.com',
     url='https://github.com/mishbahr/djangocms-gmaps',
@@ -47,7 +46,7 @@ setup(
     zip_safe=False,
     keywords='djangocms-gmaps, django-cms, djangocms-googlemap, google maps, django',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
