@@ -84,9 +84,11 @@ Whether this plugin can be used in text plugins or not::
 
     DJANGOCMS_GMAPS_TEXT_ENABLED = False
 
-The path to the template used to render the template::
+Override the ``Template`` dropdown choices to have different template options::
 
-    DJANGOCMS_GMAPS_TEMPLATE = 'djangocms_gmaps/default.html'
+    DJANGOCMS_GMAPS_TEMPLATES = (
+        ('djangocms_gmaps/default.html', _('Default')),
+    )
 
 You can customize the content and appearance of ``InfoWindow`` attached to map markers::
 
