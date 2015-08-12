@@ -1,12 +1,8 @@
-from django.utils.safestring import mark_safe
-
-try:
-    import json
-except ImportError:
-    from django.utils import simplejson as json
+# -*- coding: utf-8 -*-
 
 from django import forms
 from django.template.loader import render_to_string
+from django.utils.safestring import mark_safe
 
 
 class CoordinatesWidget(forms.TextInput):

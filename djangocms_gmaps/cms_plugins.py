@@ -3,6 +3,7 @@ try:
 except ImportError:
     from django.utils import simplejson as json
 
+from django.template.loader import select_template
 from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 
@@ -62,7 +63,7 @@ class MapPlugin(CMSPluginBase):
     model = Map
     module = settings.DJANGOCMS_GMAPS_PLUGIN_MODULE
     name = settings.DJANGOCMS_GMAPS_PLUGIN_NAME
-    render_template = settings.DJANGOCMS_GMAPS_TEMPLATE
+    render_template = settings.DJANGOCMS_GMAPS_TEMPLATES[0][0]
     child_classes = ('LocationPlugin', )
     allow_children = True
 
@@ -80,12 +81,16 @@ class MapPlugin(CMSPluginBase):
         )
 
         if settings.DJANGOCMS_GMAPS_ADVANCED_OPTIONS_ENABLED:
+
+            plugin_template = ('plugin_template', ) \
+                if len(settings.DJANGOCMS_GMAPS_TEMPLATES) > 1 else ()
+
             fieldsets = fieldsets + (
                 (_('Advanced Options'), {
                     'classes': ('collapse', ),
                     'fields': ('info_window', 'scrollwheel', 'double_click_zoom', 'draggable',
                                'keyboard_shortcuts', 'pan_control', 'zoom_control',
-                               'street_view_control', 'map_type_control', ),
+                               'street_view_control', 'map_type_control', ) + plugin_template,
                 }),
             )
 
@@ -134,6 +139,14 @@ class MapPlugin(CMSPluginBase):
             'locations': self.get_locations(instance),
         }
         return options
+
+    def get_render_template(self, context, instance, placeholder):
+        # returns the first template that exists, falling back to bundled template
+        return select_template([
+            instance.plugin_template,
+            settings.DJANGOCMS_GMAPS_TEMPLATES[0][0],
+            'djangocms_gmaps/default.html'
+        ])
 
     def render(self, context, instance, placeholder):
         context = super(MapPlugin, self).render(context, instance, placeholder)

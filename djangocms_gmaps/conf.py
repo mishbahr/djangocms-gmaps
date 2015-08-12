@@ -13,8 +13,12 @@ class DjangoCMSGmapsConf(AppConf):
     PAGE_ONLY = False
     PARENT_CLASSES = None
     REQUIRE_PARENT = False
-    TEMPLATE = 'djangocms_gmaps/default.html'
+
+    TEMPLATES = (
+        ('djangocms_gmaps/default.html', _('Default')),
+    )
     INFOWINDOW_TEMPLATE = 'djangocms_gmaps/infowindow.html'
+
     TEXT_ENABLED = False
 
     FIELDSETS = None
@@ -39,7 +43,7 @@ class DjangoCMSGmapsConf(AppConf):
 
     MAP_TYPES_DEFAULT = 'ROADMAP'
 
-    ## Nicely titled (and translatable) country names.
+    # Nicely titled (and translatable) country names.
     COUNTRIES = (
         ('AF', _(u'Afghanistan')),
         ('AX', _(u'Åland Islands')),

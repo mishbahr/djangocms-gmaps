@@ -78,6 +78,12 @@ class Map(CMSPlugin):
 
     styles = JSONField(_('Map Style'), blank=True, null=True)
 
+    plugin_template = models.CharField(
+        _('Template'), max_length=255,
+        choices=settings.DJANGOCMS_GMAPS_TEMPLATES,
+        default=settings.DJANGOCMS_GMAPS_TEMPLATES[0][0],
+    )
+
     def get_map_styles(self):
         if not self.styles:
             return []
@@ -88,6 +94,7 @@ class Map(CMSPlugin):
             num_children = len(self.child_plugin_instances)
             return u'%s location%s' % (num_children, 's'[num_children == 1:])
         return u'Please add a location'
+
 
 @python_2_unicode_compatible
 class Location(CMSPlugin):
