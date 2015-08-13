@@ -20,6 +20,8 @@ djangocms-gmaps
 
 This project requires django-cms v3.0 or higher to be properly installed and configured. 
 
+This package is compatible with `Aldryn <http://www.aldryn.com/en/marketplace/djangocms-gmaps/>`_.
+
 Preview
 --------
 
