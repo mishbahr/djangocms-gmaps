@@ -129,6 +129,7 @@ Allow users to define custom marker icons for individual locations instead of th
 You may also like...
 --------------------
 
+* djangocms-disqus - https://github.com/mishbahr/djangocms-disqus
 * djangocms-forms — https://github.com/mishbahr/djangocms-forms
 * djangocms-instagram — https://github.com/mishbahr/djangocms-instagram
 * djangocms-responsive-wrapper — https://github.com/mishbahr/djangocms-responsive-wrapper
