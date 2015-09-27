@@ -130,6 +130,7 @@ You may also like...
 --------------------
 
 * djangocms-disqus - https://github.com/mishbahr/djangocms-disqus
+* djangocms-fbcomments - https://github.com/mishbahr/djangocms-fbcomments
 * djangocms-forms — https://github.com/mishbahr/djangocms-forms
 * djangocms-instagram — https://github.com/mishbahr/djangocms-instagram
 * djangocms-responsive-wrapper — https://github.com/mishbahr/djangocms-responsive-wrapper
