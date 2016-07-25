@@ -8,10 +8,9 @@ except ImportError:     # Python 2
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.template.loader import render_to_string
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.html import strip_spaces_between_tags
 from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import python_2_unicode_compatible
-
 
 from cms.models import CMSPlugin
 from easy_thumbnails.files import get_thumbnailer

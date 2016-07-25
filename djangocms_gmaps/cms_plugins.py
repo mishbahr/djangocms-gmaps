@@ -1,20 +1,19 @@
 from django.core.exceptions import ImproperlyConfigured
-
-try:
-    import json
-except ImportError:
-    from django.utils import simplejson as json
-
 from django.template.loader import select_template
-from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
+from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
 from .conf import settings
 from .forms import LocationForm
-from .models import Map, Location
+from .models import Location, Map
+
+try:
+    import json
+except ImportError:
+    from django.utils import simplejson as json
 
 
 class LocationPlugin(CMSPluginBase):
