@@ -151,7 +151,7 @@ class MapPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context = super(MapPlugin, self).render(context, instance, placeholder)
-        map_options = self.get_map_options(context, instance),
+        map_options = self.get_map_options(context, instance)
         context.update({
             'map_options': mark_safe(json.dumps(map_options))
         })
