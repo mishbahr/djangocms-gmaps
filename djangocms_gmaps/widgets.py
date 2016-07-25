@@ -5,6 +5,7 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
+from django.utils.translation import ugettext_lazy as _
 
 
 class CoordinatesWidget(forms.TextInput):
