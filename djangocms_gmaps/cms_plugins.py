@@ -1,3 +1,5 @@
+from django.core.exceptions import ImproperlyConfigured
+
 try:
     import json
 except ImportError:
@@ -152,6 +154,10 @@ class MapPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context = super(MapPlugin, self).render(context, instance, placeholder)
         map_options = self.get_map_options(context, instance)
+        if settings.DJANGOCMS_GMAPS_API_KEY is None:
+            msg = _('"DJANGOCMS_GMAPS_API_KEY" is not defined. Please check your project settings')
+            raise ImproperlyConfigured(msg)
+
         context.update({
             'map_options': mark_safe(json.dumps(map_options)),
             'api_key': settings.DJANGOCMS_GMAPS_API_KEY
