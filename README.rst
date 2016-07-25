@@ -54,7 +54,13 @@ Quickstart
 
     python manage.py migrate
 
-  
+4. Add ``DJANGOCMS_GMAPS_API_KEY`` to your project settings::
+
+    DJANGOCMS_GMAPS_API_KEY = 'AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk'
+
+For more information about Google Maps API key, please visit https://developers.google.com/maps/documentation/javascript/get-api-key
+
+
 Configuration
 -------------
 
