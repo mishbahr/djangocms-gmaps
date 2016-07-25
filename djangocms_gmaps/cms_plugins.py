@@ -22,7 +22,6 @@ class LocationPlugin(CMSPluginBase):
     name = settings.DJANGOCMS_GMAPS_LOCATION_PLUGIN_NAME
     render_plugin = False
     parent_classes = ('MapPlugin', )
-    text_enabled = settings.DJANGOCMS_GMAPS_TEXT_ENABLED
 
     def get_fieldsets(self, request, obj=None):
         if settings.DJANGOCMS_GMAPS_LOCATION_FIELDSETS:
@@ -67,6 +66,7 @@ class MapPlugin(CMSPluginBase):
     render_template = settings.DJANGOCMS_GMAPS_TEMPLATES[0][0]
     child_classes = ('LocationPlugin', )
     allow_children = True
+    text_enabled = settings.DJANGOCMS_GMAPS_TEXT_ENABLED
 
     def get_fieldsets(self, request, obj=None):
         if settings.DJANGOCMS_GMAPS_FIELDSETS:
