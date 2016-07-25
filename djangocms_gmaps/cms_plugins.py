@@ -153,7 +153,8 @@ class MapPlugin(CMSPluginBase):
         context = super(MapPlugin, self).render(context, instance, placeholder)
         map_options = self.get_map_options(context, instance)
         context.update({
-            'map_options': mark_safe(json.dumps(map_options))
+            'map_options': mark_safe(json.dumps(map_options)),
+            'api_key': settings.DJANGOCMS_GMAPS_API_KEY
         })
         return context
 

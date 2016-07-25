@@ -21,6 +21,8 @@ class DjangoCMSGmapsConf(AppConf):
 
     TEXT_ENABLED = False
 
+    API_KEY = None
+
     FIELDSETS = None
     LOCATION_FIELDSETS = None
 
