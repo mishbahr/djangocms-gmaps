@@ -1,6 +1,6 @@
 {% load staticfiles sekizai_tags cms_tags %}
 
-{% addtoblock "js" %}<script type="text/javascript" src="//maps-api-ssl.google.com/maps/api/js?v=3&amp;key={{ api_key }}&amp;sensor=true"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script async defer type="text/javascript" src="//maps-api-ssl.google.com/maps/api/js?key={{ api_key }}&callback=initMap"></script>{% endaddtoblock %}
 {% addtoblock "js" %}<script type="text/javascript" src="{% static "js/djangocms_gmaps/gmaps.js" %}"></script>{% endaddtoblock %}
 
 

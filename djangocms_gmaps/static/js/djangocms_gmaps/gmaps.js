@@ -1,8 +1,3 @@
-if (!(typeof window.google === 'object' && window.google.maps)) {
-  throw 'Google Maps API is required. Please register the following JavaScript library ' +
-  'http://maps.google.com/maps/api/js?sensor=true.'
-}
-
 var extendObject = function(obj, new_obj) {
   if (obj === new_obj) {
     return obj;
@@ -27,7 +22,7 @@ var getElementById = function(id) {
 
 var getDataAttribute = function(elem, key) {
   var data = elem.getAttribute('data-' + key);
-  return window.JSON.parse(data)[0];
+  return window.JSON.parse(data);
 };
 
 var GMaps = function(options) {
@@ -136,7 +131,7 @@ var GMaps = function(options) {
   }
 };
 
-google.maps.event.addDomListener(window, 'load', function() {
+function initMap() {
   var maps = document.getElementsByClassName('djangocms_gmaps');
   for (var i = 0; i < maps.length; i++) {
     var mapOptions = {
@@ -145,4 +140,4 @@ google.maps.event.addDomListener(window, 'load', function() {
     mapOptions = extendObject(mapOptions, getDataAttribute(maps[i], 'options'));
     new GMaps(mapOptions);
   }
-});
+};

@@ -54,6 +54,7 @@
         };
 
         var initialize = function() {
+            console.log('GMAP initialize');
             var mapOptions = {
                 center: new google.maps.LatLng(40.712784, -74.005941),
                 zoom: 11,
@@ -70,7 +71,7 @@
 
         if (!(typeof window.google === 'object' && window.google.maps)) {
             throw 'Google Maps API is required. Please register the following ' +
-            'JavaScript library http://maps.google.com/maps/api/js?sensor=true.'
+            'JavaScript library http://maps.google.com/maps/api/js'
         } else {
             google.maps.event.addDomListener(window, 'load', initialize);
         }

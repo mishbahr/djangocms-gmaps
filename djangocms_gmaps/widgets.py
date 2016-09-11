@@ -28,7 +28,7 @@ class CoordinatesWidget(forms.TextInput):
             'all': ('css/djangocms_gmaps/coordinates_widget.css', )
         }
         js = (
-            '//maps.google.com/maps/api/js?sensor=false&key={api_key}'.format(
+            '//maps.google.com/maps/api/js?key={api_key}'.format(
                 api_key=settings.DJANGOCMS_GMAPS_API_KEY),
             'js/djangocms_gmaps/coordinates_widget.js',
         )
