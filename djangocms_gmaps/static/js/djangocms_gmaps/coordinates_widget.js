@@ -54,7 +54,6 @@
         };
 
         var initialize = function() {
-            console.log('GMAP initialize');
             var mapOptions = {
                 center: new google.maps.LatLng(40.712784, -74.005941),
                 zoom: 11,
