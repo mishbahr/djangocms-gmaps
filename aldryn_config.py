@@ -6,6 +6,7 @@ from aldryn_client import forms
 
 
 class Form(forms.BaseForm):
+    api_key = forms.CharField('Google Maps API key')
     plugin_module = forms.CharField('Plugin module name', initial='Generic')
     plugin_name = forms.CharField('Plugin name', initial='Map')
     location_plugin_name = forms.CharField(
@@ -43,6 +44,7 @@ class Form(forms.BaseForm):
         help_text='Check this box to allow the use of custom markers.')
 
     def to_settings(self, data, settings):
+        settings['DJANGOCMS_GMAPS_API_KEY'] = data['api_key']
         settings['DJANGOCMS_GMAPS_PLUGIN_MODULE'] = data['plugin_module']
         settings['DJANGOCMS_GMAPS_PLUGIN_NAME'] = data['plugin_name']
         settings['DJANGOCMS_GMAPS_LOCATION_PLUGIN_NAME'] = data[
