@@ -179,7 +179,7 @@ class Location(CMSPlugin):
             'zoom': 17,
             'lat': coordinates[0],
             'lng': coordinates[1],
-            'address': quote_plus(self.address)
+            'address': quote_plus(self.address.encode('utf-8'), safe=':/')
         }
         return u'http://maps.google.com/maps' \
                u'?f=d&z=%(zoom)s&ll=%(lat)s,%(lng)s' \
