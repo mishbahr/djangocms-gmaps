@@ -23,6 +23,7 @@ class LocationPlugin(CMSPluginBase):
     name = settings.DJANGOCMS_GMAPS_LOCATION_PLUGIN_NAME
     parent_classes = ('MapPlugin', )
     render_template = 'djangocms_gmaps/dummy_location_template.html'
+    require_parent = True
 
     def get_fieldsets(self, request, obj=None):
         if settings.DJANGOCMS_GMAPS_LOCATION_FIELDSETS:
